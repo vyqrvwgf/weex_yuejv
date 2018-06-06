@@ -50,15 +50,14 @@ module.exports = {
   name: 'App',
     data: function () {
         return {
-          detailData: '',
-          infrastructures: ''
+          detailData: ''
         }
       },
     created: function() {
       var me = this;
       stream.fetch({
       method: 'GET',
-      url: 'http://www.yuejuweb.com/wechatapi/0/house/?housing_resources_id=24',
+      url: 'http://www.yuejuweb.com/wechatapi/0/house/?housing_resources_id='+this.$route.query.id,
       type:'json'
       }, function(ret) {
         var result = ret.data.data.house;
@@ -67,7 +66,7 @@ module.exports = {
     },
   methods: {
     minibarLeftButtonClick () {
-      alert('back');
+      
     },
   }
 }

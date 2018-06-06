@@ -1,7 +1,8 @@
 import Vue from 'vue'
 /* global Vue */
 import Router from 'vue-router'
-import Detail from '@/components/detail.vue'
+import detail from '@/components/detail.vue'
+import list from '@/components/list.vue'
 
 Vue.use(Router)
 
@@ -9,8 +10,11 @@ module.exports = new Router({
   routes: [
     {
       path: '/detail',
-      name: 'Detail',
-      component: Detail
+      component: detail
+    },
+    {
+      path: '/',
+      component: list
     }
   ]
 })
